@@ -1,0 +1,20 @@
+[
+  {
+    "operation": "remove",
+    "spec": {
+      "id": "",
+      "fields": {
+        "project": "",
+        "id": ""
+      }
+    }
+  },
+  {
+    "operation": "shift",
+    "spec": {
+      "fields": {
+        "*": "&"
+      }
+    }
+  }
+  ]

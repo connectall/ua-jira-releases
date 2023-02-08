@@ -1,0 +1,41 @@
+1) API Response and Request Payloads are in JSON Format
+-----> No Risk
+
+
+2) It uses Basic as well as OAuth Authentication.
+-----> No Risk
+
+
+3) Metadata:
+	i) There is a project scope.
+	ii) There is an artifact scope scope.
+-----> No Risk
+
+
+4) Field Mapping:
+	i) There is limited no of fields.
+	ii) There are no custom fields.
+-----> No Risk
+
+
+5) Date format is in yyyy-MM-dd
+-----> No Risk
+
+
+6) API Configuration:
+	i) Query Modified Records:	GET		/rest/api/2/project/{projectId}/version?startAt=0&maxResults=2
+-----> Risk (It doesnot have lastmodifieddate field in the payload also It doesnot have query to get the particular records)
+
+	ii) Read Record By Id:	GET		/rest/api/2/version/{recordId}
+-----> No Risk
+
+	iii) Create Record: POST	/rest/api/2/version
+-----> No Risk
+
+	iv) Update Record:	PUT		/rest/api/2/version/{recordId}	
+
+
+7) If you use orderBy=startDate then it will get the results with startDate and it will also get the results without startDate at the end.
+	Valid values: description, -description, +description, name, -name, +name, releaseDate, -releaseDate, +releaseDate, sequence, -sequence, +sequence, startDate, -startDate, +startDate
+	minus(-) represents descending order.
+	plus(+) represents ascending order.

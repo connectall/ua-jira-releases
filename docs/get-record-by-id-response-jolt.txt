@@ -1,0 +1,41 @@
+[
+  {
+    "operation": "shift",
+    "spec": {
+      "id": "&",
+      "released": {
+        "false": {
+          "#Not Released": "fields.released"
+        },
+        "true": {
+          "#Released": "fields.released"
+        }
+      },
+      "overdue": {
+        "false": {
+          "#Not Overdue": "fields.overdue"
+        },
+        "true": {
+          "#Overdue": "fields.overdue"
+        }
+      },
+      "archived": {
+        "false": {
+          "#Not Archived": "fields.archived"
+        },
+        "true": {
+          "#Archived": "fields.archived"
+        }
+      },
+      "#version": "fields.artifact",
+      "*": "fields.&"
+    }
+  },
+  {
+    "operation": "shift",
+    "spec": {
+      "id": "&",
+      "fields": "&"
+    }
+  }
+ ]

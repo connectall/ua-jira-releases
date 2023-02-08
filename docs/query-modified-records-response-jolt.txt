@@ -1,0 +1,67 @@
+[
+  {
+    "operation": "shift",
+    "spec": {
+      "values": {
+        "*": {
+          "id": "result.[&1].&",
+          "released": {
+            "false": {
+              "#Not Released": "result.[&3].fields.released"
+            },
+            "true": {
+              "#Released": "result.[&3].fields.released"
+            }
+          },
+          "overdue": {
+            "false": {
+              "#Not Overdue": "result.[&3].fields.overdue"
+            },
+            "true": {
+              "#Overdue": "result.[&3].fields.overdue"
+            }
+          },
+          "archived": {
+            "false": {
+              "#Not Archived": "result.[&3].fields.archived"
+            },
+            "true": {
+              "#Archived": "result.[&3].fields.archived"
+            }
+          },
+          "*": "result.[&1].fields.&"
+        }
+      }
+    }
+  },
+  {
+    "operation": "modify-overwrite-beta",
+    "spec": {
+      "totalrecords": "=size(@(1,result))",
+      "result": {
+        "*": {
+          "id": "=toString"
+        }
+      }
+    }
+  },
+  {
+    "operation": "shift",
+    "spec": {
+      "totalrecords": "&",
+      "totalResults": "&",
+      "result": {
+        "*": {
+          "id": "result.[&1].&",
+          "fields": "result.[&1].&"
+        }
+      }
+    }
+  }, {
+    "operation": "default",
+    "spec": {
+      "totalrecords": 0,
+      "result": []
+    }
+   }
+]
