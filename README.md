@@ -8,4 +8,4 @@
 Working Condition:
 - It cannot query the records which is last modified as it doesn't have date-time field.
 - It can query all the records with descending sequence.
-- It can read, create and update the records
+- It can read, create and update the records.
