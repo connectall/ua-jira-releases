@@ -1,4 +1,4 @@
-# jira-releases_universal_adapter
+# ua-jira-releases
  Adapter can create, update, read and query the Releases(Versions) of Jira within a Project.
 
 1) It has been tested with 10 fields.
